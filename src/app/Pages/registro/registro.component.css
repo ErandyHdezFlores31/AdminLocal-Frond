@@ -1,0 +1,121 @@
+.alto{
+    height: 100%;
+}
+
+.divlogo{
+    display: block;
+    justify-content: center;
+}
+/*
+Template Name: Admin pro Admin
+Author: Wrappixel
+Email: niravjoshi87@gmail.com
+File: scss
+*/
+/*
+Template Name: Admin Pro Admin
+Author: Wrappixel
+Email: niravjoshi87@gmail.com
+File: scss
+*/
+/*Theme Colors*/
+/*bootstrap Color*/
+/*Light colors*/
+/*Normal Color*/
+/*Extra Variable*/
+/*******************
+Login register and recover password Page
+******************/
+.login-register {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100%;
+    width: 100%;
+    padding: 10% 0;
+    position: fixed; }
+
+  .login-box {
+    width: 400px;
+    margin: 0 auto; }
+    .login-box .footer {
+      width: 100%;
+      left: 0px;
+      right: 0px; }
+    .login-box .social {
+      display: block;
+      margin-bottom: 30px; }
+
+  #recoverform {
+    display: none; }
+
+  .login-sidebar {
+    padding: 0px;
+    margin-top: 0px; }
+    .login-sidebar .login-box {
+      right: 0px;
+      position: absolute;
+      height: 100%; }
+
+
+
+
+
+      input{
+        width: 80%;
+        border: 1px #2596be solid;
+        border-radius: 10px;
+        display:block;
+        margin:auto;
+    }
+    
+
+.registratecolor{
+    color: #2596be;
+}
+
+
+.logo{
+    width: 150px;
+    height: 150px;
+    display:block;
+    margin:auto;
+}
+
+.mar{
+  margin-top: 60px;
+}
+
+/*** ESTILOS BOTÓN GROW SKEW REVERSE ***/
+.ov-btn-grow-skew-reverse {
+  background: #2596be; /* color de fondo */
+  color: #fff; /* color de fuente */
+  border: 2px solid ; /* tamaño y color de borde */
+  padding: 10px 15px;
+  border-radius: 20px; /* redondear bordes */
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  display: inline-block;
+}
+.ov-btn-grow-skew-reverse:hover {
+  color: #fff;/* color de fuente hover */
+}
+.ov-btn-grow-skew-reverse::after {
+  content: "";
+  background: #eccc12; /* color de fondo hover */
+  position: absolute;
+  z-index: -1;
+  padding: 16px 20px;
+  display: block;
+  left: -20%;
+  right: -20%;
+  top: 0;
+  bottom: 0;
+  transform: skewX(45deg) scale(0, 1);
+  transition: all 0.3s ease;
+}
+.ov-btn-grow-skew-reverse:hover::after {
+  transition: all 0.3s ease-out;
+  transform: skewX(45deg) scale(1, 1);
+}

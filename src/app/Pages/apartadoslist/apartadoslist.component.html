@@ -1,0 +1,173 @@
+<app-navbar></app-navbar>
+
+<div class="nota">
+  <label for="" class="es">  NOTA: Si selecciona el boton de "Pagado", se borrara automaticamente de la lista</label>
+</div>
+<div class="container margen text-center border border-success p-2 mb-2 border-opacity-25 borde shadow">
+  <div class="form-group searchColor">
+    <input type="text" class="form-control colorbarrabusq"  style="margin-left: 60%;" name="filterPost" placeholder="Buscar..." >
+  </div>
+ 
+   <br>
+    <table
+        id="demo-foo-addrow"
+        class="table table-hover fondo borde"
+        data-page-size="10">
+      <thead class="table colortabla">
+        <tr>
+          <th class="orden">Id<i class="bi bi-arrow-down-up"></i></th>
+          <th>Nombre</th>
+          <th>Local</th>
+          <th>Fecha de apartado</th>
+          <th>Adelanto</th>
+          <th>Restarian</th>
+          <th>Fecha-Vencimiento</th>
+          <th>Editar</th>
+          <th>Pendiente/Pagado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Javier Galaviz</td>
+          <td>A4</td>
+          <td>24/11/2022</td>
+          <td>$1200</td>
+          <td class="letra">$1800</td>
+          <td>15/12/2022</td>
+          <td>
+            <button routerLink="/edit" >
+              <i class="bi bi-pencil iconcolor"></i></button>
+          </td>
+          <td>
+            <button class="pendiente" disabled>Pendiente</button>
+
+            <button class="ov-btn-grow-skew-reverse">Pagado</button>
+          </td>
+          
+        </tr>
+        <tr>
+          <th scope="row">1</th>
+          <td>Javier Galaviz</td>
+          <td>A4</td>
+          <td>24/11/2022</td>
+          <td>$1200</td>
+          <td class="letra">$1800</td>
+          <td>15/12/2022</td>
+          <td>
+            <button routerLink="/edit" >
+              <i class="bi bi-pencil iconcolor"></i></button>
+          </td>
+          <td>
+            <button class="pendiente" disabled>Pendiente</button>
+
+            <button class="ov-btn-grow-skew-reverse">Pagado</button>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Javier Galaviz</td>
+          <td>A4</td>
+          <td>24/11/2022</td>
+          <td>$1200</td>
+          <td class="letra">$1800</td>
+          <td>15/12/2022</td>
+          <td>
+            <button routerLink="/edit" >
+              <i class="bi bi-pencil iconcolor"></i></button>
+          </td>
+          <td>
+            <button class="pendiente" disabled>Pendiente</button>
+
+            <button class="ov-btn-grow-skew-reverse">Pagado</button>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>Javier Galaviz</td>
+          <td>A4</td>
+          <td>24/11/2022</td>
+          <td>$1200</td>
+          <td class="letra">$1800</td>
+          <td>15/12/2022</td>
+          <td>
+            <button routerLink="/edit" >
+              <i class="bi bi-pencil iconcolor"></i></button>
+          </td>
+          <td>
+            <button class="pendiente" disabled>Pendiente</button>
+
+            <button class="ov-btn-grow-skew-reverse">Pagado</button>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">4</th>
+          <td>Javier Galaviz</td>
+          <td>A4</td>
+          <td>24/11/2022</td>
+          <td>$1200</td>
+          <td class="letra">$1800</td>
+          <td>15/12/2022</td>
+          <td>
+            <button routerLink="/edit" >
+              <i class="bi bi-pencil iconcolor"></i></button>
+          </td>
+          <td>
+            
+            <button class="pendiente" disabled>Pendiente</button>
+
+            <button class="ov-btn-grow-skew-reverse">
+              <span title="Si usted activa este boton, se borrara de la lista automaticamente">Pagado</span>
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">5</th>
+          <td>Javier Galaviz</td>
+          <td>A4</td>
+          <td>24/11/2022</td>
+          <td>$1200</td>
+          <td class="letra">$1800</td>
+          <td>15/12/2022</td>
+          <td>
+            <button routerLink="/edit" >
+              <i class="bi bi-pencil iconcolor"></i></button>
+          </td>
+          <td>
+            <button class="pendiente" disabled>Pendiente</button>
+
+            <button class="ov-btn-grow-skew-reverse">Pagado</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+
+
+    <pagination-controls
+                     previousLabel="Anterior"
+                     nextLabel="Siguiente"></pagination-controls>
+
+
+    <!-- <div
+        class="alert alert-warning text-center mt-3 animated fadeIn fast"
+        *ngIf="!cargando && inventario.length == 0"
+      >
+        <h4 class="alert-heading">No hay registros</h4>
+        <p>
+          <i class="fa fa-exclamation fa-2x"></i>
+        </p>
+      </div>
+      <div
+        *ngIf="cargando"
+        class="alert text-center mt-3 animated fadeIn fast"
+      >
+        <h5 class="alert-heading">Cargando...</h5>
+        <p>
+          <i class="fa fa-circle-o-notch"></i>
+        </p>
+        <p class="mb-0">Espere por favor</p>
+      </div> -->
+</div>
+
+

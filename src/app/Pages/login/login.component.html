@@ -1,0 +1,55 @@
+<!-- ============================================================== -->
+<!-- Main wrapper - style you can find in pages.scss -->
+<!-- ============================================================== -->
+
+<div class="login-box card mar shadow container">
+    <div class="card-body ">
+     
+        <a href="javascript:void(0)" class="text-center db"
+          ><img src="../../../assets/img/logo.jpeg" class="logo" alt="Home" /><br
+        /></a>
+        <div class="form-group m-t-70">
+          <div class="col-xs-12">
+            <input
+              type="email"
+              name="email"
+              class="form-control"
+              placeholder="Usuario"
+              required
+            />
+          </div>
+        </div>
+        <br>
+        <div class="form-group">
+          <div class="col-xs-12">
+            <input
+              type="password"
+              name="password"
+              class="form-control"
+              placeholder="*******"
+              required
+            />
+            <div class="invalid-feedback">Insertar porfavor su password</div>
+          </div>
+        </div>
+
+        <br>
+      <br>
+        <div class="form-group text-center m-t-20">
+          <div class="col-xs-12">
+            <button
+              class="btn btn-block ov-btn-grow-skew-reverse btn-rounded"
+              routerLink="/agregar"
+              type="submit">Iniciar sesión</button>
+          </div>
+        </div>
+       <br>
+        <div class="form-group m-b-0">
+          <div class="col-sm-12 text-center">
+            ¿No tienes una cuenta?
+            <a routerLink="/registro" class="registratecolor m-l-5"
+              ><b> Regístrate</b></a>
+          </div>
+        </div>
+    </div>
+  </div>

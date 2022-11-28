@@ -1,0 +1,83 @@
+.margen{
+    margin-top: 50px;
+ }
+ 
+ .boton1{
+    background-color: #2596be;
+    color: white;
+   
+}
+
+.boton1:hover{
+    background: linear-gradient(40deg, rgba(37,150,190,1) 43%, rgba(255,218,0,1) 100%);
+ color: #fff !important;
+}
+ 
+ .borde{
+     border-radius: 10px;
+ }
+
+ .colorlabel{
+    border-radius: 15px;
+    width: 150px;
+    margin-left: 45px;
+    background-color: #2596be;
+    color: white;
+}
+
+
+.mover{
+   margin-right: 15px;
+}
+
+.table:hover tbody tr:hover td, .table-hover tbody tr:hover th{
+    background-color: #ffffff!important;
+}
+
+.titulo{
+    background-color: #2596be;
+    color: white;
+    border-radius: 10px;
+}
+
+.alinear{
+    align-content: flex-end;
+}
+
+.espacio{
+    margin-top: 55px;
+}
+
+/*** ESTILOS BOTÓN GROW SKEW REVERSE ***/
+.ov-btn-grow-skew-reverse {
+    background: #2596be; /* color de fondo */
+    color: #fff; /* color de fuente */
+    border: 2px solid ; /* tamaño y color de borde */
+    padding: 10px 15px;
+    border-radius: 20px; /* redondear bordes */
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: inline-block;
+  }
+  .ov-btn-grow-skew-reverse:hover {
+    color: #fff;/* color de fuente hover */
+  }
+  .ov-btn-grow-skew-reverse::after {
+    content: "";
+    background: #eccc12; /* color de fondo hover */
+    position: absolute;
+    z-index: -1;
+    padding: 16px 20px;
+    display: block;
+    left: -20%;
+    right: -20%;
+    top: 0;
+    bottom: 0;
+    transform: skewX(45deg) scale(0, 1);
+    transition: all 0.3s ease;
+  }
+  .ov-btn-grow-skew-reverse:hover::after {
+    transition: all 0.3s ease-out;
+    transform: skewX(45deg) scale(1, 1);
+  }

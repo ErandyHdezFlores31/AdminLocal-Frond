@@ -1,0 +1,193 @@
+<app-navbar></app-navbar>
+
+
+<div class="container margen text-center border border-success p-2 mb-2 border-opacity-25 borde shadow">
+    <div class="titulo">
+        <h2>Clientes con renta</h2>
+    </div>
+    <table
+        id="demo-foo-addrow"
+        class="table table-hover fondo borde"
+        data-page-size="10">
+      <thead class="table colortabla">
+        <tr>
+          <th class="orden">Id<i class="bi bi-arrow-down-up"></i></th>
+          <th>Nombre</th>
+          <th>Apellidos</th>
+          <th>Telefono</th>
+          <th>Correo</th>
+          <th>Local</th>
+          <th>Precio</th>
+          <th>Fecha de pago</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Andy</td>
+          <td>Flores</td>
+          <td>2711160825</td>
+          <td>andy@gmail.com</td>
+          <td>A4</td>
+          <td>$3000</td>
+          <td class="alerta">24/11/2022</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Andy</td>
+          <td>Flores</td>
+          <td>2711160825</td>
+          <td>andy@gmail.com</td>
+          <td>A4</td>
+          <td>$3000</td>
+          <td class="alerta">24/11/2022</td>
+         
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>Andy</td>
+          <td>Flores</td>
+          <td>2711160825</td>
+          <td>andy@gmail.com</td>
+          <td>A4</td>
+          <td>$3000</td>
+          <td class="alerta">24/11/2022</td>
+          
+        </tr>
+        <tr>
+          <th scope="row">4</th>
+          <td>Andy</td>
+          <td>Flores</td>
+          <td>2711160825</td>
+          <td>andy@gmail.com</td>
+          <td>A4</td>
+          <td>$3000</td>
+          <td class="alerta">24/11/2022</td>
+      
+        </tr>
+  
+      </tbody>
+    </table>
+
+    <pagination-controls  
+                     previousLabel="Anterior"
+                     nextLabel="Siguiente"></pagination-controls>
+
+<!-- (pageChange)="pageActual = $event" -->
+
+    <!-- <div
+        class="alert alert-warning text-center mt-3 animated fadeIn fast"
+        *ngIf="!cargando && inventario.length == 0"
+      >
+        <h4 class="alert-heading">No hay registros</h4>
+        <p>
+          <i class="fa fa-exclamation fa-2x"></i>
+        </p>
+      </div>
+      <div
+        *ngIf="cargando"
+        class="alert text-center mt-3 animated fadeIn fast"
+      >
+        <h5 class="alert-heading">Cargando...</h5>
+        <p>
+          <i class="fa fa-circle-o-notch"></i>
+        </p>
+        <p class="mb-0">Espere por favor</p>
+      </div> -->
+</div>
+
+
+<!--  -->
+
+
+<div class="container margen margenbotoom text-center border border-success p-2 mb-2 border-opacity-25 borde shadow">
+    <div class="titulo">
+        <h2>Clientes con apartados</h2>
+    </div> 
+    <table
+    id="demo-foo-addrow"
+    class="table table-hover fondo borde"
+    data-page-size="10">
+  <thead class="table colortabla">
+    <tr>
+      <th class="orden">Id<i class="bi bi-arrow-down-up"></i></th>
+      <th>Nombre</th>
+      <th>Local</th>
+      <th>Fecha de apartado</th>
+      <th>Adelanto</th>
+      <th>Restarian</th>
+      <th>Fecha-Vencimiento</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Javier Galaviz</td>
+      <td>A4</td>
+      <td>24/11/2022</td>
+      <td>$1200</td>
+      <td class="letra">$1800</td>
+      <td class="alerta">15/12/2022</td>
+
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Javier Galaviz</td>
+      <td>A4</td>
+      <td>24/11/2022</td>
+      <td>$1200</td>
+      <td class="letra">$1800</td>
+      <td class="alerta">15/12/2022</td>
+    
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Javier Galaviz</td>
+      <td>A4</td>
+      <td>24/11/2022</td>
+      <td>$1200</td>
+      <td class="letra">$1800</td>
+      <td class="alerta">15/12/2022</td>
+      
+    </tr>
+    <tr>
+      <th scope="row">4</th>
+      <td>Javier Galaviz</td>
+      <td>A4</td>
+      <td>24/11/2022</td>
+      <td>$1200</td>
+      <td class="letra">$1800</td>
+      <td class="alerta">15/12/2022</td>
+     
+    </tr>
+  </tbody>
+</table>
+   
+       <pagination-controls 
+                        previousLabel="Anterior"
+                        nextLabel="Siguiente"></pagination-controls>
+   
+                        
+   
+       <!-- <div
+           class="alert alert-warning text-center mt-3 animated fadeIn fast"
+           *ngIf="!cargando && inventario.length == 0"
+         >
+           <h4 class="alert-heading">No hay registros</h4>
+           <p>
+             <i class="fa fa-exclamation fa-2x"></i>
+           </p>
+         </div>
+         <div
+           *ngIf="cargando"
+           class="alert text-center mt-3 animated fadeIn fast"
+         >
+           <h5 class="alert-heading">Cargando...</h5>
+           <p>
+             <i class="fa fa-circle-o-notch"></i>
+           </p>
+           <p class="mb-0">Espere por favor</p>
+         </div> -->
+   </div>
+   
+

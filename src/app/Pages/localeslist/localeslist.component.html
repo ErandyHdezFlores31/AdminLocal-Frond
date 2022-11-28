@@ -1,0 +1,158 @@
+<app-navbar></app-navbar>
+
+
+<div class="container margen text-center border border-success p-2 mb-2 border-opacity-25 borde shadow">
+  <div class="form-group searchColor">
+    <input type="text" class="form-control colorbarrabusq"  style="margin-left: 60%;" name="filterPost" placeholder="Buscar..." >
+  </div>
+ 
+   <br>
+    <table
+        id="demo-foo-addrow"
+        class="table table-hover fondo borde"
+        data-page-size="10">
+      <thead class="table colortabla">
+        <tr>
+          <th class="orden">Id<i class="bi bi-arrow-down-up"></i></th>
+          <th>Nombre</th>
+          <th>Descripción</th>
+          <th>Precio</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>A4</td>
+          <td><p>Local con espacio de 40x40, baño y medio, todos los servicios</p></td>
+          <td>$3000</td>
+          <td>
+            <button
+             style="margin-right: 5%;">
+            <i class="bi bi-trash3 iconcolor"></i>
+            </button>
+
+            <button routerLink="/edit" >
+            <i class="bi bi-pencil iconcolor"></i></button>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>B6</td>
+          <td><p>Local con espacio de 40x40, baño y medio, todos los servicios</p></td>
+          <td>$4000</td>
+          <td>
+            <button
+            style="margin-right: 5%;">
+           <i class="bi bi-trash3 iconcolor"></i>
+           </button>
+
+           <button routerLink="/edit" >
+           <i class="bi bi-pencil iconcolor"></i></button>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>A16</td>
+          <td><p>Local con espacio de 40x40, baño y medio, todos los servicios</p></td>
+          <td>$5000</td>
+          <td>
+            <button
+            style="margin-right: 5%;">
+           <i class="bi bi-trash3 iconcolor"></i>
+           </button>
+
+           <button routerLink="/edit" >
+           <i class="bi bi-pencil iconcolor"></i></button>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">4</th>
+          <td>A5</td>
+          <td><p>Local con espacio de 40x40, baño y medio, todos los servicios</p></td>
+          <td>$3000</td>
+          <td>
+            <button
+            style="margin-right: 5%;">
+           <i class="bi bi-trash3 iconcolor"></i>
+           </button>
+
+           <button routerLink="/edit" >
+           <i class="bi bi-pencil iconcolor"></i></button>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">5</th>
+          <td>B1</td>
+          <td><p>Local con espacio de 40x40, baño y medio, todos los servicios</p></td>
+          <td>$3000</td>
+          <td>
+            <button
+            style="margin-right: 5%;">
+           <i class="bi bi-trash3 iconcolor"></i>
+           </button>
+
+           <button routerLink="/edit" >
+           <i class="bi bi-pencil iconcolor"></i></button>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">6</th>
+          <td>A10</td>
+          <td><p>Local con espacio de 40x40, baño y medio, todos los servicios</p></td>
+          <td>$3000</td>
+          <td>
+            <button
+            style="margin-right: 5%;">
+           <i class="bi bi-trash3 iconcolor"></i>
+           </button>
+
+           <button routerLink="/edit" >
+           <i class="bi bi-pencil iconcolor"></i></button>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">7</th>
+          <td>B32</td>
+          <td><p>Local con espacio de 40x40, baño y medio, todos los servicios</p></td>
+          <td>$3000</td>
+          <td>
+            <button
+             style="margin-right: 5%;">
+            <i class="bi bi-trash3 iconcolor"></i>
+            </button>
+
+            <button routerLink="/edit" >
+            <i class="bi bi-pencil iconcolor"></i></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <pagination-controls
+                     previousLabel="Anterior"
+                     nextLabel="Siguiente"></pagination-controls>
+
+
+    <!-- <div
+        class="alert alert-warning text-center mt-3 animated fadeIn fast"
+        *ngIf="!cargando && inventario.length == 0"
+      >
+        <h4 class="alert-heading">No hay registros</h4>
+        <p>
+          <i class="fa fa-exclamation fa-2x"></i>
+        </p>
+      </div>
+      <div
+        *ngIf="cargando"
+        class="alert text-center mt-3 animated fadeIn fast"
+      >
+        <h5 class="alert-heading">Cargando...</h5>
+        <p>
+          <i class="fa fa-circle-o-notch"></i>
+        </p>
+        <p class="mb-0">Espere por favor</p>
+      </div> -->
+</div>
+
+
