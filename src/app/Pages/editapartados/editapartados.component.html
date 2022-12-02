@@ -1,1 +1,144 @@
-<p>editapartados works!</p>
+<app-navbar></app-navbar>
+
+<form class="form-horizontal form-material" (ngSubmit)="guardar(form)" #form="ngForm">
+
+  <div class="container text-center">
+    <div class="titulo">
+      <h2>Editar Apartados</h2>
+  </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="container text-center margen border border-success p-2 mb-2 border-opacity-25 borde shadow">
+          
+          <div class="row row-cols-9">
+          <div class="mb-3 row form-group">
+              <label for="inputPassword" class="col-sm-2 col-form-label colorlabel">Nombre</label>
+              <div class="col-sm-7">
+                <input type="text"
+                [(ngModel)]="apart.nombre" 
+                name="nombre"
+                class="form-control" 
+                id="inputPassword">
+              </div>
+            </div>
+            <div class="mb-3 row form-group">
+              <label for="inputPassword" class="col-sm-2 col-form-label colorlabel">Nombre de local</label>
+              <div class="col-sm-7">
+                <select class="form-select" [(ngModel)]="apart.locales_id" name="locales_id">
+                  <option selected>Seleccionar</option>
+                  <option *ngFor="let locals of listLocal" value="{{ locals.id }}">{{ locals.nombrelocal }}</option>
+                </select>
+              </div>
+            </div>
+            <div class="mb-3 row form-group">
+              <label for="inputPassword" class="col-sm-2 col-form-label colorlabel">Dia de apartado</label>
+              <div class="col-sm-7">
+                <input type="date"
+                [(ngModel)]="apart.fechapartado" 
+                name="fechapartado"
+                class="form-control" 
+                id="inputPassword">
+              </div>
+            </div>
+            <div class="mb-3 row form-group">
+              <label for="inputPassword" class="col-sm-2 col-form-label colorlabel">Dia de ocupación</label>
+              <div class="col-sm-7">
+                <input type="date"
+                [(ngModel)]="apart.fechainicio" 
+                name="fechainicio"
+                class="form-control" 
+                id="inputPassword">
+              </div>
+            </div>
+            <div class="mb-3 row form-group">
+              <label for="inputPassword" class="col-sm-2 col-form-label colorlabel">Fecha de salida</label>
+              <div class="col-sm-7">
+                <input type="date"
+                [(ngModel)]="apart.fechasalida"
+                name="fechasalida"
+                class="form-control" 
+                id="inputPassword">
+              </div>
+            </div>
+          </div>
+        
+        </div>
+      </div>
+  
+      <div class="col-sm-6">
+        <div class="container text-center margen border border-success p-2 mb-2 border-opacity-25 borde shadow">
+         
+          <div class="row row-cols">
+         
+            <div class="mb-3 row form-group">
+              <label for="inputPassword" class="col-sm-2 col-form-label colorlabel">Dias en renta</label>
+              <div class="col-sm-6">
+                <input
+                type="text"
+                [(ngModel)]="apart.diasrentados"
+                name="diasrentados"
+                class="form-control" 
+                id="inputPassword">
+              </div>
+            </div>
+            <div class="mb-3 row form-group">
+              <label for="inputPassword" class="col-sm-2 col-form-label colorlabel">Total de renta</label>
+              <div class="col-sm-6">
+                <input type="number"
+                [(ngModel)]="apart.totalrenta"
+                name="totalrenta"
+                class="form-control" 
+                id="inputPassword">
+              </div>
+            </div>
+            <div class="mb-3 row form-group">
+              <label for="inputPassword" class="col-sm-2 col-form-label colorlabel">Adelanto</label>
+              <div class="col-sm-6">
+                <input type="number"
+                [(ngModel)]="apart.adelanto"
+                name="adelanto"
+                class="form-control" 
+                id="inputPassword">
+              </div>
+            </div>
+            <div class="mb-3 row form-group">
+              <label for="inputPassword" class="col-sm-2 col-form-label colorlabel">Resto</label>
+              <div class="col-sm-6">
+                <input type="number"
+                [(ngModel)]="apart.resto"
+                name="resto"
+                class="form-control" 
+                id="inputPassword">
+              </div>
+            </div>
+            <div class="mb-3 row form-group">
+              <label for="inputPassword" class="col-sm-2 col-form-label colorlabel">Fecha limite de pago</label>
+              <div class="col-sm-6">
+                <input type="date"
+                [(ngModel)]="apart.fechavencimiento"
+                name="fechavencimiento"
+                class="form-control" 
+                id="inputPassword">
+              </div>
+            </div>
+          </div>
+          <div class="mover text-end espacio">
+            <button class="btn btn-block btn-rounded ov-btn-grow-skew-reverse" type="submit">
+              <i class="bi bi-check-circle espacio"></i>
+              Guardar</button>
+
+              <button class="btn btn-block btn-rounded botoncancel mover" routerLink="/apartadoslist">
+                <i class="bi bi-x-circle"></i>
+                Cancelar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+   
+  </div>
+  
+</form>
+ 
+
+
+

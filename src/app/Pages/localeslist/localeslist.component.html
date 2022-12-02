@@ -3,126 +3,40 @@
 
 <div class="container margen text-center border border-success p-2 mb-2 border-opacity-25 borde shadow">
   <div class="form-group searchColor">
-    <input type="text" class="form-control colorbarrabusq"  style="margin-left: 60%;" name="filterPost" placeholder="Buscar..." >
+    <input type="text" class="form-control colorbarrabusq"  style="margin-left: 60%;" name="filterPost" placeholder="Buscar..." [(ngModel)]="filterPost">
   </div>
  
    <br>
     <table
         id="demo-foo-addrow"
         class="table table-hover fondo borde"
-        data-page-size="10">
+        data-page-size="10"
+        *ngIf="!cargando && local.length > 0">
       <thead class="table colortabla">
         <tr>
-          <th class="orden">Id<i class="bi bi-arrow-down-up"></i></th>
+          <th class="orden" (click)="ordenar('id')">Id<i class="bi bi-arrow-down-up"></i></th>
           <th>Nombre</th>
           <th>Descripción</th>
-          <th>Precio</th>
+          <th>Precio por dia</th>
           <th>Acciones</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>A4</td>
-          <td><p>Local con espacio de 40x40, baño y medio, todos los servicios</p></td>
-          <td>$3000</td>
+        <tr *ngFor="let i = index;
+        let local of local | orderBy: order : reversa: true
+        | busqueda:filterPost
+        | paginate: { itemsPerPage: 10, currentPage: pageActual }">
+          <th scope="row">{{ i + 1 }}</th>
+          <td>{{ local.nombrelocal }}</td>
+          <td><p>{{ local.descripcion }}</p></td>
+          <td>{{ local.preciodia | currency:'USD':true}}</td>
           <td>
-            <button
+            <button (click)="borrar(local.id)"
              style="margin-right: 5%;">
             <i class="bi bi-trash3 iconcolor"></i>
             </button>
 
-            <button routerLink="/edit" >
-            <i class="bi bi-pencil iconcolor"></i></button>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>B6</td>
-          <td><p>Local con espacio de 40x40, baño y medio, todos los servicios</p></td>
-          <td>$4000</td>
-          <td>
-            <button
-            style="margin-right: 5%;">
-           <i class="bi bi-trash3 iconcolor"></i>
-           </button>
-
-           <button routerLink="/edit" >
-           <i class="bi bi-pencil iconcolor"></i></button>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>A16</td>
-          <td><p>Local con espacio de 40x40, baño y medio, todos los servicios</p></td>
-          <td>$5000</td>
-          <td>
-            <button
-            style="margin-right: 5%;">
-           <i class="bi bi-trash3 iconcolor"></i>
-           </button>
-
-           <button routerLink="/edit" >
-           <i class="bi bi-pencil iconcolor"></i></button>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">4</th>
-          <td>A5</td>
-          <td><p>Local con espacio de 40x40, baño y medio, todos los servicios</p></td>
-          <td>$3000</td>
-          <td>
-            <button
-            style="margin-right: 5%;">
-           <i class="bi bi-trash3 iconcolor"></i>
-           </button>
-
-           <button routerLink="/edit" >
-           <i class="bi bi-pencil iconcolor"></i></button>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">5</th>
-          <td>B1</td>
-          <td><p>Local con espacio de 40x40, baño y medio, todos los servicios</p></td>
-          <td>$3000</td>
-          <td>
-            <button
-            style="margin-right: 5%;">
-           <i class="bi bi-trash3 iconcolor"></i>
-           </button>
-
-           <button routerLink="/edit" >
-           <i class="bi bi-pencil iconcolor"></i></button>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">6</th>
-          <td>A10</td>
-          <td><p>Local con espacio de 40x40, baño y medio, todos los servicios</p></td>
-          <td>$3000</td>
-          <td>
-            <button
-            style="margin-right: 5%;">
-           <i class="bi bi-trash3 iconcolor"></i>
-           </button>
-
-           <button routerLink="/edit" >
-           <i class="bi bi-pencil iconcolor"></i></button>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">7</th>
-          <td>B32</td>
-          <td><p>Local con espacio de 40x40, baño y medio, todos los servicios</p></td>
-          <td>$3000</td>
-          <td>
-            <button
-             style="margin-right: 5%;">
-            <i class="bi bi-trash3 iconcolor"></i>
-            </button>
-
-            <button routerLink="/edit" >
+            <button routerLink="/editlocales/{{ local.id }}" >
             <i class="bi bi-pencil iconcolor"></i></button>
           </td>
         </tr>
@@ -134,9 +48,9 @@
                      nextLabel="Siguiente"></pagination-controls>
 
 
-    <!-- <div
+    <div
         class="alert alert-warning text-center mt-3 animated fadeIn fast"
-        *ngIf="!cargando && inventario.length == 0"
+        *ngIf="!cargando && local.length == 0"
       >
         <h4 class="alert-heading">No hay registros</h4>
         <p>
@@ -152,7 +66,7 @@
           <i class="fa fa-circle-o-notch"></i>
         </p>
         <p class="mb-0">Espere por favor</p>
-      </div> -->
+      </div>
 </div>
 
 

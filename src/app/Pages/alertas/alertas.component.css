@@ -2,12 +2,6 @@
     margin-top: 50px;
  }
 
-.titulo{
-    background-color: #2596be;
-    color: white;
-    border-radius: 10px;
-}
-
  .borde{
     border-radius: 10px;
 }
@@ -28,7 +22,7 @@ button{
 
 .form-control:focus{
     border-color: #2596be;
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 196, 0, 0.884);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 251, 0, 0.884);
 }
 
 .table:hover tbody tr:hover td, .table-hover tbody tr:hover th{
@@ -65,12 +59,70 @@ th.orden:hover{
 
 }
 
-.alerta{
-    border-radius: 10px;
-    background-color: rgb(255, 78, 78);
-    color: white;
+.letra{
+    color: #1e2a9a;
+    font: bold;
+    font-size: medium;
 }
 
-.margenbotoom{
-    margin-bottom: 60px;
+.pendiente{
+    background-color: rgb(255, 78, 78);
+    color: #fff;
+    border-radius: 20px;
+    height: 30px;
+    margin-right: 2px;
+    margin-bottom: 5px;
+}
+
+
+/*** ESTILOS BOTÓN GROW SKEW REVERSE ***/
+.ov-btn-grow-skew-reverse {
+    background: #fff; /* color de fondo */
+    color: #00c02a; /* color de fuente */
+    border: 2px solid #00c02a; /* tamaño y color de borde */
+    padding: 3px 10px;
+    border-radius: 20px; /* redondear bordes */
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: inline-block;
+  }
+  .ov-btn-grow-skew-reverse:hover {
+    color: #fff;/* color de fuente hover */
+  }
+  .ov-btn-grow-skew-reverse::after {
+    content: "";
+    background: #00c02a; /* color de fondo hover */
+    position: absolute;
+    z-index: -1;
+    padding: 16px 20px;
+    display: block;
+    left: -20%;
+    right: -20%;
+    top: 0;
+    bottom: 0;
+    transform: skewX(45deg) scale(0, 1);
+    transition: all 0.3s ease;
+  }
+  .ov-btn-grow-skew-reverse:hover::after {
+    transition: all 0.3s ease-out;
+    transform: skewX(45deg) scale(1, 1);
+  }
+
+
+.nota{
+    background: rgb(37,150,190);
+    /* background: linear-gradient(78deg, rgba(37,150,190,1) 14%, rgba(255,218,0,1) 100%); */
+    color: #fff;
+    width: 550px;
+    height: 20px;
+    margin-top: 15px;
+    margin-left: 30px;
+    margin-right: 115px;
+    border-radius: 20px;
+    float: right;
+}
+
+.es{
+    margin-left: 15px;
 }

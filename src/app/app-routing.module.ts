@@ -31,9 +31,9 @@ const routes: Routes = [
   { path: 'apartadoslist', component: ApartadoslistComponent },
   { path: 'alertas', component: AlertasComponent },
   { path: 'localesdisp', component: LocdisponiblesComponent },
-  { path: 'editlocales', component: EditlocalesComponent },
-  { path: 'editclientes', component: EditclientesComponent },
-  { path: 'editapartados', component: EditapartadosComponent },
+  { path: 'editlocales/:id', component: EditlocalesComponent },
+  { path: 'editclientes/:id', component: EditclientesComponent },
+  { path: 'editapartados/:id', component: EditapartadosComponent },
 
 ];
 @NgModule({

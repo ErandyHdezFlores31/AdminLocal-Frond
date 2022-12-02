@@ -1,7 +1,13 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { OrderModule } from 'ngx-order-pipe';
+import { HttpClientModule } from '@angular/common/http';
+
+
+import { BusquedaPipe } from './Pipes/busqueda.pipe';
+import { BusapartadosPipe } from './Pipes/busapartados.pipe';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -21,6 +27,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EditlocalesComponent } from './Pages/editlocales/editlocales.component';
 import { EditclientesComponent } from './Pages/editclientes/editclientes.component';
 import { EditapartadosComponent } from './Pages/editapartados/editapartados.component';
+import { BusclientsPipe } from './Pipes/busclients.pipe';
 
 @NgModule({
   declarations: [
@@ -38,14 +45,19 @@ import { EditapartadosComponent } from './Pages/editapartados/editapartados.comp
     NavbarComponent,
     EditlocalesComponent,
     EditclientesComponent,
-    EditapartadosComponent
+    EditapartadosComponent,
+    BusquedaPipe,
+    BusapartadosPipe,
+    BusclientsPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     NgxPaginationModule,
-    OrderModule
+    OrderModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

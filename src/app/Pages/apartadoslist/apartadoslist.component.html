@@ -3,140 +3,58 @@
 <div class="nota">
   <label for="" class="es">  NOTA: Si selecciona el boton de "Pagado", se borrara automaticamente de la lista</label>
 </div>
-<div class="container margen text-center border border-success p-2 mb-2 border-opacity-25 borde shadow">
+<div class="container-fluid margen text-center border border-success p-2 mb-2 border-opacity-25 borde shadow">
   <div class="form-group searchColor">
-    <input type="text" class="form-control colorbarrabusq"  style="margin-left: 60%;" name="filterPost" placeholder="Buscar..." >
+    <input type="text" class="form-control colorbarrabusq"  style="margin-left: 60%;" name="filterPost" placeholder="Buscar..." [(ngModel)]="filterPost">
   </div>
  
    <br>
     <table
         id="demo-foo-addrow"
         class="table table-hover fondo borde"
-        data-page-size="10">
+        data-page-size="10"
+        *ngIf="!cargando && apartado.length > 0">
       <thead class="table colortabla">
         <tr>
-          <th class="orden">Id<i class="bi bi-arrow-down-up"></i></th>
+          <th class="orden" (click)="ordenar('id')">Id<i class="bi bi-arrow-down-up"></i></th>
           <th>Nombre</th>
           <th>Local</th>
           <th>Fecha de apartado</th>
+          <th>Fecha de ocupación</th>
+          <th>Fecha de salida</th>
+          <th>Dias en renta</th>
+          <th>Total de renta</th>
           <th>Adelanto</th>
           <th>Restarian</th>
-          <th>Fecha-Vencimiento</th>
+          <th>Fecha limite de pago</th>
           <th>Editar</th>
           <th>Pendiente/Pagado</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Javier Galaviz</td>
-          <td>A4</td>
-          <td>24/11/2022</td>
-          <td>$1200</td>
-          <td class="letra">$1800</td>
-          <td>15/12/2022</td>
+        <tr *ngFor="let i = index;
+        let apartados of apartado | orderBy: order : reversa: true
+        | busapartados:filterPost
+        | paginate: { itemsPerPage: 10, currentPage: pageActual }">
+          <th scope="row">{{ i + 1}}</th>
+          <td>{{ apartados.nombre }}</td>
+          <td>{{ apartados.locales.nombrelocal }}</td>
+          <td>{{ apartados.fechapartado | date:'dd-MM-yyyy'}}</td>
+          <td>{{ apartados.fechainicio | date:'dd-MM-yyyy'}}</td>
+          <td>{{ apartados.fechasalida | date:'dd-MM-yyyy'}}</td>
+          <td>{{ apartados.diasrentados}}</td>
+          <td>{{ apartados.totalrenta | currency:'USD':true }}</td>
+          <td>{{ apartados.adelanto | currency:'USD':true }}</td>
+          <td class="letra">{{ apartados.resto | currency:'USD':true }}</td>
+          <td>{{ apartados.fechavencimiento | date:'dd-MM-yyyy'}}</td>
           <td>
-            <button routerLink="/edit" >
+            <button routerLink="/editapartados/{{ apartados.id }}" >
               <i class="bi bi-pencil iconcolor"></i></button>
           </td>
           <td>
             <button class="pendiente" disabled>Pendiente</button>
 
-            <button class="ov-btn-grow-skew-reverse">Pagado</button>
-          </td>
-          
-        </tr>
-        <tr>
-          <th scope="row">1</th>
-          <td>Javier Galaviz</td>
-          <td>A4</td>
-          <td>24/11/2022</td>
-          <td>$1200</td>
-          <td class="letra">$1800</td>
-          <td>15/12/2022</td>
-          <td>
-            <button routerLink="/edit" >
-              <i class="bi bi-pencil iconcolor"></i></button>
-          </td>
-          <td>
-            <button class="pendiente" disabled>Pendiente</button>
-
-            <button class="ov-btn-grow-skew-reverse">Pagado</button>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Javier Galaviz</td>
-          <td>A4</td>
-          <td>24/11/2022</td>
-          <td>$1200</td>
-          <td class="letra">$1800</td>
-          <td>15/12/2022</td>
-          <td>
-            <button routerLink="/edit" >
-              <i class="bi bi-pencil iconcolor"></i></button>
-          </td>
-          <td>
-            <button class="pendiente" disabled>Pendiente</button>
-
-            <button class="ov-btn-grow-skew-reverse">Pagado</button>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Javier Galaviz</td>
-          <td>A4</td>
-          <td>24/11/2022</td>
-          <td>$1200</td>
-          <td class="letra">$1800</td>
-          <td>15/12/2022</td>
-          <td>
-            <button routerLink="/edit" >
-              <i class="bi bi-pencil iconcolor"></i></button>
-          </td>
-          <td>
-            <button class="pendiente" disabled>Pendiente</button>
-
-            <button class="ov-btn-grow-skew-reverse">Pagado</button>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">4</th>
-          <td>Javier Galaviz</td>
-          <td>A4</td>
-          <td>24/11/2022</td>
-          <td>$1200</td>
-          <td class="letra">$1800</td>
-          <td>15/12/2022</td>
-          <td>
-            <button routerLink="/edit" >
-              <i class="bi bi-pencil iconcolor"></i></button>
-          </td>
-          <td>
-            
-            <button class="pendiente" disabled>Pendiente</button>
-
-            <button class="ov-btn-grow-skew-reverse">
-              <span title="Si usted activa este boton, se borrara de la lista automaticamente">Pagado</span>
-            </button>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">5</th>
-          <td>Javier Galaviz</td>
-          <td>A4</td>
-          <td>24/11/2022</td>
-          <td>$1200</td>
-          <td class="letra">$1800</td>
-          <td>15/12/2022</td>
-          <td>
-            <button routerLink="/edit" >
-              <i class="bi bi-pencil iconcolor"></i></button>
-          </td>
-          <td>
-            <button class="pendiente" disabled>Pendiente</button>
-
-            <button class="ov-btn-grow-skew-reverse">Pagado</button>
+            <button class="ov-btn-grow-skew-reverse" (click)="borrar(apartados.id)">Pagado</button>
           </td>
         </tr>
       </tbody>
@@ -149,9 +67,9 @@
                      nextLabel="Siguiente"></pagination-controls>
 
 
-    <!-- <div
+    <div
         class="alert alert-warning text-center mt-3 animated fadeIn fast"
-        *ngIf="!cargando && inventario.length == 0"
+        *ngIf="!cargando && apartado.length == 0"
       >
         <h4 class="alert-heading">No hay registros</h4>
         <p>
@@ -167,7 +85,7 @@
           <i class="fa fa-circle-o-notch"></i>
         </p>
         <p class="mb-0">Espere por favor</p>
-      </div> -->
+      </div>
 </div>
 
 

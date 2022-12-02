@@ -3,158 +3,54 @@
 
 <div class="container margen text-center border border-success p-2 mb-2 border-opacity-25 borde shadow">
   <div class="form-group searchColor">
-    <input type="text" class="form-control colorbarrabusq"  style="margin-left: 60%;" name="filterPost" placeholder="Buscar...">
+    <input type="text" class="form-control colorbarrabusq"  style="margin-left: 60%;" name="filterPost" placeholder="Buscar..." [(ngModel)]="filterPost">
   </div>
  
    <br>
     <table
         id="demo-foo-addrow"
         class="table table-hover fondo borde"
-        data-page-size="10">
+        data-page-size="10"
+        *ngIf="!cargando && client.length > 0">
       <thead class="table colortabla">
         <tr>
-          <th class="orden">Id<i class="bi bi-arrow-down-up"></i></th>
+          <th class="orden" (click)="ordenar('id')">Id<i class="bi bi-arrow-down-up"></i></th>
           <th>Nombre</th>
           <th>Apellidos</th>
           <th>Telefono</th>
           <th>Correo</th>
           <th>Local</th>
-          <th>Precio</th>
-          <th>Fecha de pago</th>
+          <!-- <th>Precio por dia</th> -->
+          <th>Inicio de renta</th>
+          <th>Dia de salida</th>
+          <th>Dias en renta</th>
+          <th>Total de renta</th>
           <th>Acciones</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Andy</td>
-          <td>Flores</td>
-          <td>2711160825</td>
-          <td>andy@gmail.com</td>
-          <td>A4</td>
-          <td>$3000</td>
-          <td>24/11/2022</td>
+        <tr *ngFor="let i = index;
+        let client of client | orderBy: order : reversa: true
+        | busclients:filterPost
+        | paginate: { itemsPerPage: 10, currentPage: pageActual }">
+          <th scope="row">{{ i + 1 }}</th>
+          <td>{{ client.nombre }}</td>
+          <td>{{ client.apellidos }}</td>
+          <td>{{ client.telefono }}</td>
+          <td>{{ client.correo }}</td>
+          <td>{{ client.locales.nombrelocal }}</td>
+          <!-- <td>{{ client.locales.preciodia | currency:'USD':true}}</td> -->
+          <td>{{ client.fechainiciorenta | date:'dd-MM-yyyy' }}</td>
+          <td>{{ client.fechasalida | date:'dd-MM-yyyy' }}</td>
+          <td>{{ client.diasrentados }}</td>
+          <td>{{ client.totalrenta }}</td>
           <td>
-            <button
+            <button (click)="borrar(client.id)"
              style="margin-right: 5%;">
             <i class="bi bi-trash3 iconcolor"></i>
             </button>
 
-            <button routerLink="/edit" >
-            <i class="bi bi-pencil iconcolor"></i></button>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Andy</td>
-          <td>Flores</td>
-          <td>2711160825</td>
-          <td>andy@gmail.com</td>
-          <td>A4</td>
-          <td>$3000</td>
-          <td>24/11/2022</td>
-          <td>
-            <button
-            style="margin-right: 5%;">
-           <i class="bi bi-trash3 iconcolor"></i>
-           </button>
-
-           <button routerLink="/edit" >
-           <i class="bi bi-pencil iconcolor"></i></button>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Andy</td>
-          <td>Flores</td>
-          <td>2711160825</td>
-          <td>andy@gmail.com</td>
-          <td>A4</td>
-          <td>$3000</td>
-          <td>24/11/2022</td>
-          <td>
-            <button
-            style="margin-right: 5%;">
-           <i class="bi bi-trash3 iconcolor"></i>
-           </button>
-
-           <button routerLink="/edit" >
-           <i class="bi bi-pencil iconcolor"></i></button>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">4</th>
-          <td>Andy</td>
-          <td>Flores</td>
-          <td>2711160825</td>
-          <td>andy@gmail.com</td>
-          <td>A4</td>
-          <td>$3000</td>
-          <td>24/11/2022</td>
-          <td>
-            <button
-            style="margin-right: 5%;">
-           <i class="bi bi-trash3 iconcolor"></i>
-           </button>
-
-           <button routerLink="/edit" >
-           <i class="bi bi-pencil iconcolor"></i></button>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">5</th>
-          <td>Andy</td>
-          <td>Flores</td>
-          <td>2711160825</td>
-          <td>andy@gmail.com</td>
-          <td>A4</td>
-          <td>$3000</td>
-          <td>24/11/2022</td>
-          <td>
-            <button
-            style="margin-right: 5%;">
-           <i class="bi bi-trash3 iconcolor"></i>
-           </button>
-
-           <button routerLink="/edit" >
-           <i class="bi bi-pencil iconcolor"></i></button>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">6</th>
-          <td>Andy</td>
-          <td>Flores</td>
-          <td>2711160825</td>
-          <td>andy@gmail.com</td>
-          <td>A4</td>
-          <td>$3000</td>
-          <td>24/11/2022</td>
-          <td>
-            <button
-            style="margin-right: 5%;">
-           <i class="bi bi-trash3 iconcolor"></i>
-           </button>
-
-           <button routerLink="/edit" >
-           <i class="bi bi-pencil iconcolor"></i></button>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">7</th>
-          <td>Andy</td>
-          <td>Flores</td>
-          <td>2711160825</td>
-          <td>andy@gmail.com</td>
-          <td>A4</td>
-          <td>$3000</td>
-          <td>24/11/2022</td>
-          <td>
-            <button
-             style="margin-right: 5%;">
-            <i class="bi bi-trash3 iconcolor"></i>
-            </button>
-
-            <button routerLink="/edit" >
+            <button routerLink="/editclientes/{{ client.id }}">
             <i class="bi bi-pencil iconcolor"></i></button>
           </td>
         </tr>
@@ -166,9 +62,9 @@
                      nextLabel="Siguiente"></pagination-controls>
 
 
-    <!-- <div
+    <div
         class="alert alert-warning text-center mt-3 animated fadeIn fast"
-        *ngIf="!cargando && inventario.length == 0"
+        *ngIf="!cargando && client.length == 0"
       >
         <h4 class="alert-heading">No hay registros</h4>
         <p>
@@ -184,7 +80,7 @@
           <i class="fa fa-circle-o-notch"></i>
         </p>
         <p class="mb-0">Espere por favor</p>
-      </div> -->
+      </div>
 </div>
 
 

@@ -22,7 +22,7 @@ button{
 
 .form-control:focus{
     border-color: #2596be;
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 196, 0, 0.884);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 251, 0, 0.884);
 }
 
 .table:hover tbody tr:hover td, .table-hover tbody tr:hover th{
@@ -70,7 +70,8 @@ th.orden:hover{
     color: #fff;
     border-radius: 20px;
     height: 30px;
-    margin-right: 15px;
+    margin-right: 2px;
+    margin-bottom: 5px;
 }
 
 
@@ -79,7 +80,7 @@ th.orden:hover{
     background: #fff; /* color de fondo */
     color: #00c02a; /* color de fuente */
     border: 2px solid #00c02a; /* tamaño y color de borde */
-    padding: 4px 15px;
+    padding: 3px 10px;
     border-radius: 20px; /* redondear bordes */
     position: relative;
     z-index: 1;
