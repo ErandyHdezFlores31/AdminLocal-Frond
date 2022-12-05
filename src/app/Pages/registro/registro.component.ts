@@ -13,6 +13,9 @@ import Swal from 'sweetalert2';
 export class RegistroComponent implements OnInit {
   regis: registro = new registro();
 
+  visible:boolean = true;
+  changetype:boolean =true;
+
   constructor(private router: Router, private Registro: RegistroService) { }
 
   ngOnInit(): void {
@@ -24,7 +27,7 @@ export class RegistroComponent implements OnInit {
         position: 'top',
         icon: 'error',
         title: 'Ha ocurrido un error',
-        text: 'Falta un campo por agregar, favor de verificar',
+        text: 'Falta un campo por agregar o la contraseña no tiene minimo 6 caracteres',
         timer: 1500,
       });
       console.log('Formulario no valido');
@@ -54,5 +57,10 @@ export class RegistroComponent implements OnInit {
       }
     }
     );
+  }
+
+  viewpass(){
+    this.visible = !this.visible;
+    this.changetype = !this.changetype;
   }
 }

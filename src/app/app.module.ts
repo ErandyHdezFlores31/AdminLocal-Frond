@@ -9,6 +9,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { BusquedaPipe } from './Pipes/busqueda.pipe';
 import { BusapartadosPipe } from './Pipes/busapartados.pipe';
 
+import {MatInputModule} from '@angular/material/input';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -53,7 +55,8 @@ import { BusclientsPipe } from './Pipes/busclients.pipe';
     BrowserAnimationsModule,
     NgxPaginationModule,
     OrderModule,
-    FormsModule
+    FormsModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

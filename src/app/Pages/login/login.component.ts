@@ -13,6 +13,10 @@ import Swal from 'sweetalert2';
 export class LoginComponent implements OnInit {
   auth: login = new login();
 
+  
+  visible:boolean = true;
+  changetype:boolean =true;
+  
   constructor(private router: Router, private Login: LoginService) { }
 
   ngOnInit(): void {
@@ -56,5 +60,10 @@ export class LoginComponent implements OnInit {
       }
     }
     );
+  }
+
+  viewpass(){
+    this.visible = !this.visible;
+    this.changetype = !this.changetype;
   }
 }

@@ -83,7 +83,7 @@ Login register and recover password Page
 }
 
 .mar{
-  margin-top: 60px;
+  margin-top: 30px;
 }
 
 /*** ESTILOS BOTÓN GROW SKEW REVERSE ***/
@@ -118,4 +118,28 @@ Login register and recover password Page
 .ov-btn-grow-skew-reverse:hover::after {
   transition: all 0.3s ease-out;
   transform: skewX(45deg) scale(1, 1);
+}
+
+.err{
+  margin-left: 70px;
+}
+
+.formdiv {
+  position: relative;
+}
+
+.formdiv input {
+        width: 80%;
+        border: 1px #2596be solid;
+        border-radius: 10px;
+        display:block;
+        margin:auto;
+}
+
+.eyeicon {
+  color: #2596be;
+  position: absolute;
+  right: 50px;
+  top: 10px;
+  cursor: pointer;
 }

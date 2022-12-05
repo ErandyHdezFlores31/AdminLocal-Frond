@@ -58,23 +58,28 @@
                 [(ngModel)]="regis.email"
                 name="email"
                 class="form-control"
-                placeholder="Usuario"
+                placeholder="Correo"
                 required
               />
              </div>
           </div>
           <br>
-        <div class="form-group">
+        <div class="form-group formdiv">
           <div class="col-xs-12">
             <input
-              type="password"
+              [type]="changetype?'password':'text'"
               [(ngModel)]="regis.password"
               name="password"
               class="form-control"
               placeholder="*******"
+              minlength="6"
+              maxlength="12"
               required
             />
-            <div class="invalid-feedback">Insertar porfavor su password</div>
+            <span class="eyeicon" (click)="viewpass()"><i [ngClass]="visible?'bi bi-eye-fill':'bi bi-eye-slash-fill'"></i></span>
+            <mat-error class="err" *ngIf="form.invalid">
+            Contraseña min-6/max-12 caracteres
+            </mat-error>
           </div>
         </div>
       <br>
@@ -83,6 +88,9 @@
             <button
               class="btn btn-block ov-btn-grow-skew-reverse btn-rounded"
               type="submit">Registrarme</button>
+          </div>
+          <div class="col-sm-11 text-center">
+            <a routerLink="/login" class="registratecolor m-l-5"><i class="bi bi-arrow-left-short"></i><b>Volver</b></a>
           </div>
         </div>
       </form>

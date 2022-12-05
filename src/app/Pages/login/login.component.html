@@ -24,17 +24,19 @@
           </div>
         </div>
         <br>
-        <div class="form-group">
+        <div class="form-group formdiv">
           <div class="col-xs-12">
             <input
-              type="password"
+              [type]="changetype?'password':'text'"
               [(ngModel)]="auth.password"
               name="password"
               class="form-control"
               placeholder="*******"
+              minlength="6"
+              maxlength="12"
               required
             />
-            <div class="invalid-feedback">Insertar porfavor su password</div>
+            <span class="eyeicon" (click)="viewpass()"><i [ngClass]="visible?'bi bi-eye-fill':'bi bi-eye-slash-fill'"></i></span>
           </div>
         </div>
 
