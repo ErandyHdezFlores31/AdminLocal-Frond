@@ -10,12 +10,10 @@ import { AgreapartadosComponent } from './Pages/agreapartados/agreapartados.comp
 import { LocaleslistComponent } from './Pages/localeslist/localeslist.component';
 import { ClienteslistComponent } from './Pages/clienteslist/clienteslist.component';
 import { ApartadoslistComponent } from './Pages/apartadoslist/apartadoslist.component';
-import { AlertasComponent } from './Pages/alertas/alertas.component';
 import { EditlocalesComponent } from './Pages/editlocales/editlocales.component';
 import { EditclientesComponent } from './Pages/editclientes/editclientes.component';
 import { EditapartadosComponent } from './Pages/editapartados/editapartados.component';
 
-import { LocdisponiblesComponent } from './Pages/locdisponibles/locdisponibles.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -29,8 +27,6 @@ const routes: Routes = [
   { path: 'localeslist', component: LocaleslistComponent },
   { path: 'clienteslist', component: ClienteslistComponent },
   { path: 'apartadoslist', component: ApartadoslistComponent },
-  { path: 'alertas', component: AlertasComponent },
-  { path: 'localesdisp', component: LocdisponiblesComponent },
   { path: 'editlocales/:id', component: EditlocalesComponent },
   { path: 'editclientes/:id', component: EditclientesComponent },
   { path: 'editapartados/:id', component: EditapartadosComponent },

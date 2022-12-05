@@ -20,8 +20,6 @@ import { ClienteslistComponent } from './Pages/clienteslist/clienteslist.compone
 import { ApartadoslistComponent } from './Pages/apartadoslist/apartadoslist.component';
 import { RegistroComponent } from './Pages/registro/registro.component';
 import { LoginComponent } from './Pages/login/login.component';
-import { AlertasComponent } from './Pages/alertas/alertas.component';
-import { LocdisponiblesComponent } from './Pages/locdisponibles/locdisponibles.component';
 import { NavbarComponent } from './Navbar/navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EditlocalesComponent } from './Pages/editlocales/editlocales.component';
@@ -40,8 +38,6 @@ import { BusclientsPipe } from './Pipes/busclients.pipe';
     ApartadoslistComponent,
     RegistroComponent,
     LoginComponent,
-    AlertasComponent,
-    LocdisponiblesComponent,
     NavbarComponent,
     EditlocalesComponent,
     EditclientesComponent,

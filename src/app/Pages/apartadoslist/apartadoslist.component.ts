@@ -1,7 +1,10 @@
 import { style } from '@angular/animations';
+import { CssSelector } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
+import { bootstrapApplication } from '@angular/platform-browser';
 import { apartados } from 'src/app/models/apartados';
 import { ApartadosService } from 'src/app/services/apartados.service';
+// import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-apartadoslist',
@@ -18,6 +21,11 @@ export class ApartadoslistComponent implements OnInit {
   order: string = 'id';
   reversa: boolean = false;
 
+  date = new Date;
+
+//  boton: boolean = false;
+  
+
   id: any;
 
   constructor(private ApartadosService: ApartadosService) { }
@@ -25,6 +33,8 @@ export class ApartadoslistComponent implements OnInit {
   ngOnInit(): void {
     this.listApart();
   }
+
+    // console.log(this.date.toLocaleDateString()); Esto muestra la fecha actual
 
   listApart() {
     this.cargando = true;
@@ -56,11 +66,4 @@ export class ApartadoslistComponent implements OnInit {
       )
     }
   }
-
-  // cambiar(){
-  //   if (this.apart.fechavencimiento > this.apart.fechavencimiento) {
-      
-  //   }
-  // }
-
 }
